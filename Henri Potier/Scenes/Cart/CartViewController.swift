@@ -33,7 +33,13 @@ class CartViewController: UIViewController, CartDisplayLogic {
     }
     
     private func getCommercialOffers() {
-        guard Session.cart.count > 0 else { return }
+        guard Session.cart.count > 0 else {
+            oldPriceLbl.text =  "0"
+            reductionLbl.text = "0"
+            newPriceLbl.text =  "0"
+            return
+        }
+        
         interactor?.getCommercialOffers(Session.cart)
     }
     
@@ -62,6 +68,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             cell.fill(Session.cart[indexPath.row]) { [weak self] in
                 Session.cart.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
                 
                 self?.getCommercialOffers()
             }
