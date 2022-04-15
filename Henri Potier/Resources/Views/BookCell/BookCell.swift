@@ -17,16 +17,29 @@ class BookCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var coverImg: UIImageView!
+    @IBOutlet weak var addToCartBtn: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
+    var addToCartAction: (() -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        addToCartBtn.layer.cornerRadius = 5.0
+        coverImg.layer.cornerRadius = 5.0
+        containerView.layer.cornerRadius = 5.0
     }
     
-    func fill(_ book: Book.ResponseItem) {
+    func fill(_ book: Book.ResponseItem, _ addToCart: @escaping () -> Void) {
         titleLbl.text = book.title
         priceLbl.text = "\(book.price) $"
         coverImg.kf.setImage(with: URL(string: book.cover))
+        
+        addToCartAction = addToCart
+    }
+    
+    @IBAction func didTapAddToCart(_ sender: UIButton) {
+        addToCartAction?()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

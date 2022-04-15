@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum OfferType: String, Codable {
+    case percentage
+    case minus
+    case slice
+}
+
 enum CommercialOffers {
     
     struct Response: Codable {
@@ -14,8 +20,14 @@ enum CommercialOffers {
     }
 
     struct Offer: Codable {
-        let type: String
+        let type: OfferType
         let value: Int
         let sliceValue: Int?
+    }
+    
+    struct ViewModel {
+        let totalPrice: Int
+        let bestOffer: CommercialOffers.Offer
+        let newPrice: Int
     }
 }

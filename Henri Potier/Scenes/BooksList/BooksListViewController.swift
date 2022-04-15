@@ -24,8 +24,7 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic {
         super.viewDidLoad()
         
         setupView()
-        interactor?.getBooks()
-//        print(BooksListViewController.classForCoder())
+        getBooks()
     }
     
     // MARK: Display Logic
@@ -36,14 +35,40 @@ class BooksListViewController: UIViewController, BooksListDisplayLogic {
     }
     
     func displayErrorMessage(_ message: String) {
-        // TODO: Display error message
+        showError(message)
     }
     
     // MARK: Private Methods
     
     private func setupView() {
+        navigationItem.title = "Henri Potier"
         tableView.register(BookCell.nib, forCellReuseIdentifier: BookCell.identifier)
     }
+    
+    private func getBooks() {
+        interactor?.getBooks()
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func didChangeValue(_ sender: UITextField) {
+        interactor?.filterBooks(using: sender.text ?? "")
+    }
+    
+    @IBAction func didTapCartBtn(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let cartVC = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController {
+            // Dependencies Injection
+            let presenter = CartPresenter(viewController: cartVC)
+            let interactor = CartInteractor(presenter: presenter)
+            cartVC.interactor = interactor
+            
+            navigationController?.pushViewController(cartVC, animated: true)
+        }
+    }
+}
+
+extension BooksListViewController: UITextFieldDelegate {
     
 }
 
@@ -54,7 +79,11 @@ extension BooksListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: BookCell.identifier, for: indexPath) as? BookCell {
-            cell.fill(books[indexPath.row])
+            cell.addToCartBtn.setTitle("Add to cart", for: .normal)
+            cell.fill(books[indexPath.row]) { [weak self] in
+                guard let self = self else { return }
+                Session.cart.append(self.books[indexPath.row])
+            }
             return cell
         }
         

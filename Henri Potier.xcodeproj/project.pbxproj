@@ -10,7 +10,6 @@
 		348AC478962C53DFF2F58DCD /* Pods_Henri_PotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA4CFF0774732A1FDFF80C8 /* Pods_Henri_PotierTests.framework */; };
 		5F01BBE729ED60F51D7583F5 /* Pods_Henri_Potier_Henri_PotierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B63B1FC727C4F2CD33720A /* Pods_Henri_Potier_Henri_PotierUITests.framework */; };
 		84927F182808B99C002D527A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F172808B99C002D527A /* AppDelegate.swift */; };
-		84927F1C2808B99C002D527A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F1B2808B99C002D527A /* ViewController.swift */; };
 		84927F1F2808B99C002D527A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84927F1D2808B99C002D527A /* Main.storyboard */; };
 		84927F212808B99E002D527A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84927F202808B99E002D527A /* Assets.xcassets */; };
 		84927F242808B99E002D527A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84927F222808B99E002D527A /* LaunchScreen.storyboard */; };
@@ -25,6 +24,11 @@
 		84927F552808CA71002D527A /* BooksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F542808CA71002D527A /* BooksListViewController.swift */; };
 		84927F592808E850002D527A /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F572808E850002D527A /* BookCell.swift */; };
 		84927F5A2808E850002D527A /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84927F582808E850002D527A /* BookCell.xib */; };
+		84927F6128090AB8002D527A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F6028090AB8002D527A /* CartViewController.swift */; };
+		84927F6328090B2B002D527A /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F6228090B2B002D527A /* CartInteractor.swift */; };
+		84927F6528090B43002D527A /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F6428090B43002D527A /* CartPresenter.swift */; };
+		84927F6928092109002D527A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F6828092109002D527A /* Session.swift */; };
+		84927F6D28098A34002D527A /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84927F6C28098A34002D527A /* UIViewController+extension.swift */; };
 		FE372B5CE828D69FBC4FDD75 /* Pods_Henri_Potier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AD56DF4EF36BDAF6D72216 /* Pods_Henri_Potier.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +55,6 @@
 		40C37F91AE768152BC370BF6 /* Pods-Henri Potier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Henri Potier.debug.xcconfig"; path = "Target Support Files/Pods-Henri Potier/Pods-Henri Potier.debug.xcconfig"; sourceTree = "<group>"; };
 		84927F142808B99C002D527A /* Henri Potier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Henri Potier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84927F172808B99C002D527A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84927F1B2808B99C002D527A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84927F1E2808B99C002D527A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84927F202808B99E002D527A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84927F232808B99E002D527A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +72,11 @@
 		84927F542808CA71002D527A /* BooksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListViewController.swift; sourceTree = "<group>"; };
 		84927F572808E850002D527A /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		84927F582808E850002D527A /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
+		84927F6028090AB8002D527A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		84927F6228090B2B002D527A /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		84927F6428090B43002D527A /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		84927F6828092109002D527A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		84927F6C28098A34002D527A /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		952D1E8A3839A9765502DACC /* Pods-Henri Potier-Henri PotierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Henri Potier-Henri PotierUITests.release.xcconfig"; path = "Target Support Files/Pods-Henri Potier-Henri PotierUITests/Pods-Henri Potier-Henri PotierUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9BD945AE3ADBCAF399C4968D /* Pods-Henri Potier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Henri Potier.release.xcconfig"; path = "Target Support Files/Pods-Henri Potier/Pods-Henri Potier.release.xcconfig"; sourceTree = "<group>"; };
 		C58BCE339320FD8BD22AB720 /* Pods-Henri Potier-Henri PotierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Henri Potier-Henri PotierUITests.debug.xcconfig"; path = "Target Support Files/Pods-Henri Potier-Henri PotierUITests/Pods-Henri Potier-Henri PotierUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,9 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				84927F172808B99C002D527A /* AppDelegate.swift */,
+				84927F6828092109002D527A /* Session.swift */,
 				84927F4E2808C915002D527A /* Scenes */,
 				84927F4D2808C7CF002D527A /* Models */,
-				84927F1B2808B99C002D527A /* ViewController.swift */,
+				84927F6A28092919002D527A /* Resources */,
 				84927F1D2808B99C002D527A /* Main.storyboard */,
 				84927F222808B99E002D527A /* LaunchScreen.storyboard */,
 				84927F202808B99E002D527A /* Assets.xcassets */,
@@ -172,6 +181,7 @@
 		84927F4E2808C915002D527A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				84927F5F28090A92002D527A /* Cart */,
 				84927F4F2808C923002D527A /* BooksList */,
 			);
 			path = Scenes;
@@ -180,7 +190,6 @@
 		84927F4F2808C923002D527A /* BooksList */ = {
 			isa = PBXGroup;
 			children = (
-				84927F562808E82D002D527A /* BookCell */,
 				84927F502808CA48002D527A /* BooksListInteractor.swift */,
 				84927F522808CA56002D527A /* BooksListPresenter.swift */,
 				84927F542808CA71002D527A /* BooksListViewController.swift */,
@@ -195,6 +204,33 @@
 				84927F582808E850002D527A /* BookCell.xib */,
 			);
 			path = BookCell;
+			sourceTree = "<group>";
+		};
+		84927F5F28090A92002D527A /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				84927F6028090AB8002D527A /* CartViewController.swift */,
+				84927F6228090B2B002D527A /* CartInteractor.swift */,
+				84927F6428090B43002D527A /* CartPresenter.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		84927F6A28092919002D527A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84927F6B28092932002D527A /* Views */,
+				84927F6C28098A34002D527A /* UIViewController+extension.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84927F6B28092932002D527A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84927F562808E82D002D527A /* BookCell */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A475A20A81BBEFBE6272CB8B /* Frameworks */ = {
@@ -460,15 +496,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84927F6D28098A34002D527A /* UIViewController+extension.swift in Sources */,
 				84927F592808E850002D527A /* BookCell.swift in Sources */,
 				84927F4A2808BE05002D527A /* Book.swift in Sources */,
+				84927F6128090AB8002D527A /* CartViewController.swift in Sources */,
 				84927F552808CA71002D527A /* BooksListViewController.swift in Sources */,
-				84927F1C2808B99C002D527A /* ViewController.swift in Sources */,
 				84927F4C2808C663002D527A /* CommercialOffers.swift in Sources */,
 				84927F182808B99C002D527A /* AppDelegate.swift in Sources */,
 				84927F482808BD5D002D527A /* BibloServices.swift in Sources */,
+				84927F6528090B43002D527A /* CartPresenter.swift in Sources */,
+				84927F6928092109002D527A /* Session.swift in Sources */,
 				84927F532808CA56002D527A /* BooksListPresenter.swift in Sources */,
 				84927F512808CA48002D527A /* BooksListInteractor.swift in Sources */,
+				84927F6328090B2B002D527A /* CartInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

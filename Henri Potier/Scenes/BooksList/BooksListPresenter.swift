@@ -10,19 +10,28 @@ import Foundation
 
 protocol BooksListPresentationLogic {
     func presentBooksList(_ books: Book.Response?)
+    func presentFiltredBooksList(_ text: String)
     func presentError(_ message: String)
 }
 
 class BooksListPresenter: BooksListPresentationLogic {
     
     weak var viewController: BooksListDisplayLogic!
+    var books: Book.Response = []
+    var filtredBooks: Book.Response = []
     
     init(viewController: BooksListDisplayLogic) {
         self.viewController = viewController
     }
     
     func presentBooksList(_ books: Book.Response?) {
-        viewController.displayBooksList(books ?? [])
+        self.books = books ?? []
+        viewController.displayBooksList(self.books)
+    }
+    
+    func presentFiltredBooksList(_ text: String) {
+        filtredBooks = text == "" ? books : books.filter { $0.title.lowercased().contains(text.lowercased()) }
+        viewController.displayBooksList(filtredBooks)
     }
     
     func presentError(_ message: String) {
