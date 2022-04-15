@@ -2,7 +2,7 @@
 //  BooksListInteractor.swift
 //  Henri Potier
 //
-//  Created by YEH on 14/4/2022.
+//  Created by Yassine EL HALAOUI on 14/4/2022.
 //
 
 import Foundation
@@ -33,6 +33,8 @@ class BooksListInteractor: BooksListBusinessLogic {
                         self.presenter.presentBooksList(books)
                     } catch {
                         // status Code != 200~299
+                        // Use of generique message insted of error.localizedDescription
+                        // error.localizedDescription is not clear to the final user
                         self.presenter.presentError("Technical problem occurred")
                     }
                 case .failure(let err):

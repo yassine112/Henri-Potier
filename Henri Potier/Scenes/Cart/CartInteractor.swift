@@ -2,7 +2,7 @@
 //  CartInteractor.swift
 //  Henri Potier
 //
-//  Created by YEH on 15/4/2022.
+//  Created by Yassine EL HALAOUI on 15/4/2022.
 //
 
 import Foundation
@@ -26,7 +26,7 @@ class CartInteractor: CartBusinessLogic {
         let isbnStr = books.map { $0.isbn }.joined(separator: ",")
         
         provider.request(.commercialOffers(isbn: isbnStr)) { [weak self] result in
-            guard let self = self else { return }
+            guard let self = self else { return } // prevent memory lack (retain cycle)
             switch result {
                 case .success(let response):
                     do {
@@ -35,6 +35,8 @@ class CartInteractor: CartBusinessLogic {
                         self.presenter.presentCommercialOffers(offers)
                     } catch {
                         // status Code != 200~299
+                        // Use of generique message insted of error.localizedDescription
+                        // error.localizedDescription is not clear to the final user
                         self.presenter.presentError("Technical problem occurred")
                     }
                 case .failure(let err):

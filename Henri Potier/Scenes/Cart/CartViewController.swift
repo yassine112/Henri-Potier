@@ -2,7 +2,7 @@
 //  CartViewController.swift
 //  Henri Potier
 //
-//  Created by YEH on 15/4/2022.
+//  Created by Yassine EL HALAOUI on 15/4/2022.
 //
 
 import UIKit
@@ -56,7 +56,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         Session.cart.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: BookCell.identifier, for: indexPath) as? BookCell {
             cell.addToCartBtn.setTitle("Remove item", for: .normal)
@@ -71,7 +70,5 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         
         return UITableViewCell()
     }
-    
-    
     
 }

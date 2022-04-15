@@ -2,7 +2,7 @@
 //  BooksListPresenter.swift
 //  Henri Potier
 //
-//  Created by YEH on 14/4/2022.
+//  Created by Yassine EL HALAOUI on 14/4/2022.
 //
 
 import Foundation
@@ -30,6 +30,9 @@ class BooksListPresenter: BooksListPresentationLogic {
     }
     
     func presentFiltredBooksList(_ text: String) {
+        // Filter books using there names
+        // Filter books in presenter layer to isolate the operation from UIViewController
+        // to be readable, mantainable and easy to test
         filtredBooks = text == "" ? books : books.filter { $0.title.lowercased().contains(text.lowercased()) }
         viewController.displayBooksList(filtredBooks)
     }
